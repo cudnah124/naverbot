@@ -117,6 +117,15 @@ app.use(cors({
 }));
 app.use(express.json());
 
+
+app.get("/ping", (req, res) => {
+  res.status(200).json({
+    status: "ok",
+    service: "chatbot-backend",
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({ status: 'OK', message: 'AI Chatbot Backend is running' });
