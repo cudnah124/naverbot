@@ -249,7 +249,7 @@ app.post('/api/analytics/recommendations', async (req, res) => {
 
 
     // Get the generative model
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     // Create analytics context with heatmap data
     const analyticsContext = createAnalyticsContext(tasks, taskStats, timeAccuracy, {
@@ -353,7 +353,7 @@ app.post('/api/chat', async (req, res) => {
     const heatmapAnalysis = taskStats?.heatmapAnalysis || null;
 
     // Get the generative model
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     // Create context from tasks with heatmap data
     const tasksContext = createTasksContext(tasks || [], { heatmapData, heatmapAnalysis });
